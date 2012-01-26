@@ -1,0 +1,40 @@
+--- trac-plugin-stractistics-0.5.0b/./stractistics/web_ui.py~	2011-01-11 00:28:06.000000000 +0200
++++ trac-plugin-stractistics-0.5.0b/./stractistics/web_ui.py	2012-01-27 01:07:33.487229561 +0200
+@@ -90,16 +90,16 @@
+ 
+     def process_request(self, req):
+         req.perm.assert_permission('STRACTISTICS_VIEW')
+-        add_stylesheet(req, 'hw/css/stractistics.css')
+-        add_script(req, 'hw/javascript/swfobject.js')
+-        add_script(req, 'hw/javascript/prototype.js')
+-        add_script(req, 'hw/javascript/js-ofc-library/ofc.js')
+-        add_script(req, 'hw/javascript/js-ofc-library/data.js')
+-        add_script(req, 'hw/javascript/js-ofc-library/charts/area.js')
+-        add_script(req, 'hw/javascript/js-ofc-library/charts/bar.js')
+-        add_script(req, 'hw/javascript/js-ofc-library/charts/line.js')
+-        add_script(req, 'hw/javascript/js-ofc-library/charts/pie.js')
+-        add_script(req, 'hw/javascript/chart_reports.js')
++        add_stylesheet(req, 'stractistics/css/stractistics.css')
++        add_script(req, 'stractistics/javascript/swfobject.js')
++        add_script(req, 'stractistics/javascript/prototype.js')
++        add_script(req, 'stractistics/javascript/js-ofc-library/ofc.js')
++        add_script(req, 'stractistics/javascript/js-ofc-library/data.js')
++        add_script(req, 'stractistics/javascript/js-ofc-library/charts/area.js')
++        add_script(req, 'stractistics/javascript/js-ofc-library/charts/bar.js')
++        add_script(req, 'stractistics/javascript/js-ofc-library/charts/line.js')
++        add_script(req, 'stractistics/javascript/js-ofc-library/charts/pie.js')
++        add_script(req, 'stractistics/javascript/chart_reports.js')
+ 
+         add_ctxtnav(req, 'Project Reports', req.href.stractistics("/project_reports"))
+         add_ctxtnav(req, 'User Reports', req.href.stractistics("/user_reports"))
+--- trac-plugin-stractistics-0.5.0b/stractistics/./util.py~	2011-01-10 23:32:24.000000000 +0200
++++ trac-plugin-stractistics-0.5.0b/stractistics/./util.py	2012-01-27 01:11:55.732494931 +0200
+@@ -217,7 +217,7 @@
+         self.name = name
+         self.columns = []
+         self.results = []
+-        self.path = "".join([path, '/hw/swf/'])
++        self.path = "".join([path, '/stractistics/swf/'])
+         self.chart_info = ChartInfo(name, self.path)
+         
+     def set_name(self,name):
