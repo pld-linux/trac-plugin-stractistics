@@ -30,7 +30,7 @@ by providing repository, ticket and wiki statistics.
 %setup -qc
 mv %{plugin}plugin/trunk/* .
 %undos README.txt stractistics/*.py
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %{__python} setup.py build
